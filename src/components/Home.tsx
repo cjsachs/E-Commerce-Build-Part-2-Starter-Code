@@ -3,7 +3,6 @@ import { fetchCategories, fetchProducts } from "../api/api"
 import { useState } from "react"
 import { Product } from "../types/types"
 import ProductCard from "./ProductCard"
-import { Link } from "react-router-dom"
 
 const Home = () => {
     const { data: products } = useQuery({
@@ -35,7 +34,6 @@ const Home = () => {
                 <option key={category} value={category}>{category}</option>
             ))}
         </select>
-        <Link to={'/cart'}>Cart</Link>
         <div>
             {filteredProducts?.map((product: Product) => (
                 <ProductCard key={product.id} product={product}/>
